@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Material Admin</title>
+  <link rel="stylesheet" href="css/materialdesignicons.min.css">
+  <script src="socket.io/socket.io.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="images/favicon.png" />
+
+
+<body>
+  <div class="body-wrapper">
+    <header class="mdc-toolbar mdc-elevation--z4 mdc-toolbar--fixed">
+      <div class="mdc-toolbar__row">
+        <div class="mdc-menu-anchor">
+        </div>
+        <div class="mdc-menu-anchor mr-1">
+          <a class="mdc-button" id="logOut" href="/logout">LOGOUT</a>
+          <div class="mdc-button__ripple"></div>
+          </button>
+        </div>
+        </section>
+      </div>
+      </row>
+    </header>
+    <!-- partial -->
+
+
+    <div class="page-wrapper mdc-toolbar-fixed-adjust">
+      <main class="content-wrapper">
+        <div class="mdc-layout-grid">
+          <h1>Title</h1>
+          <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6">
+              <div class="mdc-card ">
+
+                <button class="mdc-button" id="resetCanvas">
+                  <div class="mdc-button__ripple"></div>
+                  <span class="mdc-button__label">CLEAR CANVAS</span>
+                </button>
+
+                <div id="container">
+                  <canvas id="canvas" width="500" height="300">
+                  </canvas>
+                </div>
+                <h3 class="drawClue">CLUE</h3>
+
+              </div>
+            </div>
+            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6">
+              <div class="mdc-card card">
+                Player input
+                <label id="submitI" class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label">
+                  <input class="mdc-text-field__input" type="text" aria-label="Label">
+                  <div class="mdc-notched-outline">
+                    <div class="mdc-notched-outline__leading"></div>
+                    <div class="mdc-notched-outline__trailing"></div>
+                  </div>
+                </label>
+                <button class="mdc-button">
+                  <div class="mdc-button__ripple"></div>
+                  <span class="mdc-button__label">Submit</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- partial:partials/_footer.html -->
+      <footer>
+        <div class="mdc-layout-grid">
+          <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6">
+              <span class="text-muted">Copyright © 20202 <a class="text-green" href="javascript:void(0);"
+                  target="_blank">Game Name Here</a>. All rights reserved.</span>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- partial -->
+    </div>
+  </div>
+  <!-- body wrapper -->
+  <!-- plugins:js -->
+  <script src="js/material-components-web.min.js"></script>
+  <script src="js/jquery3.4.1.min.js"></script>
+  <script src="js/material.js"></script>
+  <script src="js/main.js"></script>
+
+
+</body>
+
+
+</html>
