@@ -1,5 +1,3 @@
-# Project2Game
+# KariKari
 
-
-
-game
+Online Pictionary game
