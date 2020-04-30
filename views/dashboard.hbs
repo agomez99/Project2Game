@@ -68,6 +68,10 @@
               </div>
             </div>
           </div>
+          <div> <button onclick="newWord();">next word</button>
+            <h1>Word to be guessed is:<div id="myWord"></div>
+            </h1>
+          </div>
         </div>
       </main>
       <!-- partial:partials/_footer.html -->
@@ -84,6 +88,46 @@
       <!-- partial -->
     </div>
   </div>
+  <script>
+    var word = new Array()
+    word[0] = "dinasour"
+    word[1] = "automobile"
+    word[2] = "cat"
+    word[3] = "dog"
+    word[4] = "word"
+    word[5] = "letter"
+    word[6] = "number"
+    word[7] = "person"
+    word[8] = "pen"
+    word[9] = "police"
+    word[10] = "people"
+    word[11] = "sound"
+    word[12] = "water"
+    word[13] = "breakfast"
+    word[14] = "place"
+    word[15] = "man"
+    word[16] = "men"
+    word[17] = "woman"
+    word[18] = "women"
+    word[19] = "boy"
+    word[20] = "girl"
+    word[21] = "serial killer"
+    word[22] = "Oregon Trail"
+    word[23] = "week"
+    word[24] = "month"
+    word[25] = "name"
+    word[26] = "sentence"
+    word[27] = "line"
+    word[28] = "air"
+    var intWordIndex = 0;
+
+
+    function newWord() {
+      if (intWordIndex == word.length) intWordIndex = 0;
+      document.getElementById('myWord').innerHTML = word[intWordIndex];
+      intWordIndex++;
+    }
+  </script>
   <!-- body wrapper -->
   <!-- plugins:js -->
   <script src="js/material-components-web.min.js"></script>
