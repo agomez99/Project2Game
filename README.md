@@ -1,5 +1,3 @@
-# Project2Game
+# KariKari
 
-
-
-game
+Open bidirectional communication Pictionary game 
