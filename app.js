@@ -37,13 +37,16 @@ app.set('views', path.join(__dirname,'views'));
 require('./routes/index')(app, passport);
 
 
-
+//io.emit(username);
 
 
 
 
 //socket
 io.on('connection', function (socket) {
+
+
+
 
 	// submit drawing on canvas to other clients
 	socket.on('draw', function(obj) {

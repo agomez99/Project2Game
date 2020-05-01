@@ -32,8 +32,12 @@ text-align:center;
 }
 
 #submitI{
-padding-top:40%;
+padding-top:20%;
 
+}
+#playerInput {
+
+  font-size:45px;
 }
 
 @keyframes mdc-ripple-fg-radius-in {
