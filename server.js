@@ -17,7 +17,7 @@ var line_history = [];
 
 // event-handler for new incoming connections
 io.on('connection', function (socket) {
-   
+
 
    // first send the history to the new client
    for (var i in line_history) {
@@ -34,6 +34,13 @@ io.on('connection', function (socket) {
 
       // send line to all clients
       io.emit('draw_line', { line: data.line });
+      //console.log('draw_line');
    });
+
+   // socket.on('clear screen', function(data){
+   //    io.emit('clear screen',data);
+   // })
+
+
 });
 
