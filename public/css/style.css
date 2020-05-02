@@ -1,8 +1,54 @@
 
+.grey-out {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(24, 22, 22);
+  opacity: .9;
+  display: none;
+  z-index: 900;
+}
+
+.user {
+  position: relative;
+  background-color: white;
+  max-height: 600px;
+  max-width: 600px;
+  text-align: center;
+  padding: 25px 5px;
+  top: 20%;
+  margin: auto;
+  border-radius: 6px;
+}
+
+#username {
+  width: 90%;
+  font-size: 30px;
+  padding: 5px;
+  margin: 10px;
+}
+
+#submitname {
+  width: 70px;
+  height: 30px;
+  background-color: rgb(203, 214, 203);
+}
+
+.users {
+  display: inline-block;
+  background-color: white;
+  width: 25%;
+  margin: 10px 10px;
+  padding: 10px;
+  vertical-align: top;
+}
+
 #container { position: relative; }
 #canvas{ border: 1px solid #000;
-  margin-left:10%;
-  margin-right:10%;
+
+  display:block;
  }
 #resetCanvas,#logOut{
   margin-left:35%;
@@ -20,11 +66,12 @@ padding-top:20%;
 
 }
 #playerInput {
+
   font-size:45px;
 }
 @font-face {
   font-family: 'catcafemedium';
-  src: url('public/fonts/catcafe-webfont.woff2') format('woff2'),
+  src: url('fonts/catcafe-webfont.woff') format('woff'),
        url('fonts/catcafe-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
