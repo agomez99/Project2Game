@@ -1,25 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
-  <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>KariKari</title>
-<!-- JQuery -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<!-- Bootstrap tooltips -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-<!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<!-- MDB core JavaScript -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/js/mdb.min.js"></script> 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+
   <link rel="stylesheet" href="css/style.css">
   <link rel="shortcut icon" href="images/favicon.png" />
 
-
 <body>
+<!--login screen-->
+  <div class="grey-out hidden">
+    <form class="user"><label for="username">Enter name </label><input id="username" type="text"
+        placeholder="player name" maxlength="14" autofocus>
+      <button type="submit" id="submitname">Submit</button>
+    </form>
+  </div>
+
+  <!--main screen-->
   <div class="body-wrapper">
     <header class="mdc-toolbar mdc-elevation--z4 mdc-toolbar--fixed">
       <div class="mdc-toolbar__row">
@@ -51,32 +47,33 @@
                 </button>
 
                 <div id="container">
-                  <canvas id="canvas" width="500" height="300">
+                  <canvas id="canvas" width="400" height="300">
                   </canvas>
-                </div>                
+                </div>
               </div>
             </div>
+ 
 
-         
             <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6">
               <div class="mdc-card card">
-       
+                <!--Material textarea-->
+                <label for="form7">Current players:</label>
+                  <div class="users" input id="users"></div>
 
-                          <!--Material textarea-->
-                          <label for="form7">Player input</label>
-                          <div class="md-form">
-                            <textarea id="playerInput" class="md-textarea form-control" rows="3"></textarea>
-                          </div>
+                <div class="md-form">
+                  <textarea id="playerInput" class="md-textarea form-control" rows="3"></textarea>
+                </div>
 
 
-               <label id="submitI" class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label">
-                                  <input class="mdc-text-field__input" id ="myInput" placeholder ="Enter Your Guess" type="text" aria-label="Label">
+                <label id="submitI" class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label">
+                  <input class="mdc-text-field__input" id="myInput" placeholder="Enter Your Guess" type="text"
+                    aria-label="Label">
                   <div class="mdc-notched-outline">
                     <div class="mdc-notched-outline__leading"></div>
                     <div class="mdc-notched-outline__trailing"></div>
                   </div>
                 </label>
-                <button type="button"onclick="text();" id ="sub"class="mdc-button">
+                <button type="button" onclick="text();" id="sub" class="mdc-button">
                   <div class="mdc-button__ripple"></div>
                   <span class="mdc-button__label">Submit</span>
                 </button>
@@ -85,7 +82,8 @@
           </div>
 
           <button onclick="newWord();">next word</button>
-            <h2>Word to be guessed is:<div id="myWord"></h2>
+          <h2>Word to be guessed is:<div id="myWord">
+          </h2>
 
 
 
@@ -109,12 +107,20 @@
   <!-- plugins:js -->
 
 
-<script>
-
+  <!-- JQuery -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js">
   </script>
-  <script src="js/jquery3.4.1.min.js"></script>
-  <script src="js/main.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/js/mdb.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+  <script src="script.js"></script>
 </body>
+
 
 
 </html>
