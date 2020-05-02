@@ -37,9 +37,9 @@ io.on('connection', function (socket) {
       //console.log('draw_line');
    });
 
-   // socket.on('clear screen', function(data){
-   //    io.emit('clear screen',data);
-   // })
+   socket.on('clear screen', function(data){
+       io.emit('clear screen',data);
+   })
 
 
 });

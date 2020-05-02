@@ -1,5 +1,5 @@
 var user;
-
+ var socket = io();
 function usernameAsk() {
   $(".grey-out").fadeIn(500);
   $(".user").fadeIn(500);
@@ -21,9 +21,48 @@ function usernameAsk() {
     $(".user").fadeOut(300);
   });
 }
-var users = [];
 
-function userList() {}
+
+function clearCanvas() {
+  var canvas = document.getElementById("canvas");
+  var context = canvas.getContext("2d");
+  context.clearRect(0, 0, canvas.width, canvas.height);
+
+  console.log("clearing called");
+}
+
+
+//function for perosn guessing
+var guesser = function(){
+}
+
+//function for displaying word
+var guessWord = function(data){
+
+}
+
+//display list of users playing
+var users = [];
+var userList = function(names){
+users = names;
+}
+
+//new player drawer
+var newDrawer =  function(){
+
+}
+
+//suplay when corrct answer is given
+var correctAnswer = function(data){
+
+}
+
+//reset page with new drawer
+var reset  = function(name){
+
+}
+
+
 
 var word = new Array();
 word[0] = "dinasour";
@@ -42,19 +81,19 @@ word[12] = "water";
 word[13] = "breakfast";
 word[14] = "place";
 word[15] = "man";
-word[16] = "men";
+word[16] = "army";
 word[17] = "woman";
-word[18] = "women";
+word[18] = "oven";
 word[19] = "boy";
 word[20] = "girl";
-word[21] = "serial killer";
-word[22] = "Oregon Trail";
-word[23] = "week";
+word[21] = "ghost";
+word[22] = "fire hydrant";
+word[23] = "world";
 word[24] = "month";
-word[25] = "name";
+word[25] = "newspaper";
 word[26] = "sentence";
 word[27] = "line";
-word[28] = "air";
+word[28] = "telvision";
 var intWordIndex = 0;
 
 // //Generate new word
@@ -63,7 +102,7 @@ function newWord() {
   document.getElementById("myWord").innerHTML = intWordIndex;
  clearCanvas();
 }
-// retrive from  JSON librayr alternative
+// retrive from  JSON library alternative
 //$.getJSON("../../library/nounslist.json", function (data) {
 //   var arrItems = [];      // THE ARRAY TO STORE JSON ITEMS.
 //   $.each(data, function (index, value) {
@@ -78,24 +117,18 @@ function text() {
 }
 
 $("#resetCanvas").click(function () {
-  var canvas = document.getElementById("canvas");
-  var ctx = canvas.getContext("2d");
-  ctx.setTransform();
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+ clearCanvas();
 });
 
-function clearCanvas() {
-  var canvas = document.getElementById("canvas");
-  var ctx = canvas.getContext("2d");
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-}
+
+
 
 function download(){
   document.getElementById("downloader").download = "image.png";
   document.getElementById("downloader").href = document.getElementById("canvas").toDataURL("image/png").replace(/^data:image\/[^;]/, 'data:application/octet-stream');
 }
 
-function saveCanvas(){
+var saveCanvas = function(){
   var canvas = document.getElementById("canvas");
   var d = canvas.toDataURL("image/png");
   var w=window.open('about:blank','image from canvas');
@@ -122,12 +155,6 @@ window.addEventListener("DOMContentLoaded", function () {
 
   //image background 
   document.getElementById("canvas").style.background = "url('images/art.jpg')";
-
-  // let swedishflagbg = new Image();
-  // swedishflagbg.src = "https://neal.fun/paper/minified/paper.jpg";
-  // swedishflagbg.onload = function() {
-  // context.drawImage(swedishflagbg, 0, 0,context.width, context.height);
-  // }
 
   // register mouse event handlers
   canvas.onmousedown = function (e) {
@@ -167,17 +194,14 @@ window.addEventListener("DOMContentLoaded", function () {
   }
   mainLoop();
 });
-$(document).ready(function () {
 
-  // canvas = $('#canvas');
-  // context = canvas[0].getContext('2d');
-  // canvas[0].width = canvas[0].offsetWidth;
-  // canvas[0].height = canvas[0].offsetHeight;
-  // canvas.clear();
+$(document).ready(function () {
+    clearCanvas();
+
    //usernameAsk();
   //saveCanvas();
   newWord();
-  //socket.on('clear screen', clearCanvas);
+  socket.on('clear screen', clearCanvas);
 
 
 

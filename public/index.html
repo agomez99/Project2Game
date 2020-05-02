@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="shortcut icon" href="images/favicon.png" />
 
-<body>
+<body onload = "clearCanvas()">
 <!--login screen-->
   <div class="grey-out hidden">
     <form class="user"><label for="username">Enter name </label><input id="username" type="text"
@@ -22,7 +22,6 @@
         <div class="mdc-menu-anchor">
         </div>
         <div class="mdc-menu-anchor mr-1">
-          <a class="mdc-button" id="logOut" href="/logout">LOGOUT</a>
           <div class="mdc-button__ripple"></div>
           </button>
         </div>
@@ -84,7 +83,7 @@
           </div>
 
           <button onclick="newWord();">next word</button>
-          <h2>Word to be guessed is:<div id="myWord">
+          <h2 >Word to be guessed is:<div id="myWord" style="color:rgb(238, 101, 101)">
           </h2>
 
 
@@ -118,7 +117,6 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/js/mdb.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
   <script src="script.js"></script>
-
 </body>
 
 

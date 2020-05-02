@@ -83,10 +83,11 @@ padding-top:20%;
     padding:0;
     margin:0;
 
-    font-size:10vh;
+    font-size:12vh;
   }
   h2{
     text-align: center;
+    font-family: 'catcafemedium';
 
   }
 @keyframes mdc-ripple-fg-radius-in {
