@@ -1,6 +1,19 @@
 var socket = io();
 var user;
  
+
+
+//set minutes 
+var mins = .5;
+//calculate the seconds 
+var secs = mins * 60;
+//countdown function is evoked when page is loaded 
+function countdown() {
+    setTimeout('Decrement()', 60);
+}
+
+
+
 //intro login screen
 function usernameAsk() {
     $('.grey-out').fadeIn(500);
