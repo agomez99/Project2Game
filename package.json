@@ -2,7 +2,6 @@
   "name": "karikari_drawinggame",
   "version": "1.0.0",
   "description": "",
-  "main": "",
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
