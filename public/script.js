@@ -121,6 +121,7 @@ var reset = function(name) {
     console.log('New drawer: ' + name);
     $('#guesses').html('<p>' + name + ' is the new drawer' + '</p>');
 };
+var color;
 
 // mouse draw function
 var draw = function(obj) {
@@ -128,7 +129,7 @@ var draw = function(obj) {
     context.beginPath();
     context.arc(obj.position.x, obj.position.y,
                     3, 0, 2 * Math.PI);
-           
+    context.stroke();
     context.fill();
 };
 
@@ -147,7 +148,6 @@ var drawerMouse = function() {
     $('.draw').show();
 
     var drawing;
-    var color;
     var obj = {};
 
     //color picked
