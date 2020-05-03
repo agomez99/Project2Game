@@ -128,10 +128,7 @@ var draw = function(obj) {
     context.beginPath();
     context.arc(obj.position.x, obj.position.y,
                     3, 0, 2 * Math.PI);
-                    context.shadowColor = '#999';
-                    context.shadowBlur = 20;
-                    context.shadowOffsetX = 15;
-                    context.shadowOffsetY = 15;               
+           
     context.fill();
 };
 
@@ -143,6 +140,7 @@ document.getElementById("canvas").style.background = "url('images/canvas.jpg')";
 var drawerMouse = function() {
     clearScreen();
     click = true;
+
     console.log('draw status: ' + click);
     $('#guess').hide();
     $('#guesses').empty();
@@ -155,8 +153,9 @@ var drawerMouse = function() {
     //color picked
     $('.draw-buttons').on('click', 'button', function(){
         obj.color = $(this).attr('value');
+
         console.log(obj.color);
-        
+
         //clear screen update to black
         if (obj.color === '0') {
             socket.emit('clear screen', user);
