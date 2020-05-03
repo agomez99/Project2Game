@@ -129,6 +129,8 @@ var draw = function(obj) {
     context.beginPath();
     context.arc(obj.position.x, obj.position.y,
                     3, 0, 2 * Math.PI);
+
+    //context.moveTo(obj.positon.x - canvas.offsetLeft, obj.positon.y - canvas.offsetTop)
     context.stroke();
     context.fill();
 };
@@ -136,6 +138,40 @@ var draw = function(obj) {
 
 //display backgorund image
 document.getElementById("canvas").style.background = "url('images/canvas.jpg')";
+
+
+//curten mouse positon fo undo and redo
+var cPushArray = new Array();
+var cStep = -1;
+var ctx;
+// ctx = document.getElementById('canvas').getContext("2d");
+	
+function cPush() {
+    cStep++;
+    if (cStep < cPushArray.length) { cPushArray.length = cStep; }
+    cPushArray.push(document.getElementById('canvas').toDataURL());
+}
+//undo function
+function cUndo() {
+    if (cStep > 0) {
+        cStep--;
+        var canvasPic = new Image();
+        canvasPic.src = cPushArray[cStep];
+        canvasPic.onload = function () { ctx.drawImage(canvasPic, 0, 0); }
+    }
+}
+
+//redo function
+function cRedo() {
+    if (cStep < cPushArray.length-1) {
+        cStep++;
+        var canvasPic = new Image();
+        canvasPic.src = cPushArray[cStep];
+        canvasPic.onload = function () { ctx.drawImage(canvasPic, 0, 0); }
+    }
+}
+
+
 
 //function handling mouse operations
 var drawerMouse = function() {
