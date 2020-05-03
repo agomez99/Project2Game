@@ -152,10 +152,12 @@ var drawerMouse = function() {
     var color;
     var obj = {};
 
+    //color picked
     $('.draw-buttons').on('click', 'button', function(){
         obj.color = $(this).attr('value');
         console.log(obj.color);
-
+        
+        //clear screen update to black
         if (obj.color === '0') {
             socket.emit('clear screen', user);
             context.fillStyle = 'black';
