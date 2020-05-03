@@ -1,4 +1,193 @@
 
+* {
+  box-sizing: border-box;
+}
+
+label.active{
+font-family:'catcafemedium';
+}
+p{
+  font-size:20px;
+}
+body {
+  color: rgb(0, 5, 5);
+  background-color: rgb(179, 199, 255);
+  margin: 0px;
+  min-width: 1000px;
+  font-size:35px;
+}
+#box{
+  background: #FFF;
+	height: 300px;
+	width:250px
+}
+.row {
+  height: 500px;
+  width: 30%; 
+  position: relative;
+  text-align: center;
+}
+
+.users, canvas, #guess, .draw {
+  border: 1px solid rgb(16, 17, 17);
+}
+
+.users {
+  display: inline-block;
+  background-color: white;
+  width: 30%;
+  height:500px;
+  margin: 10px 10px;
+  padding: 10px;
+}
+
+iframe {
+  display: inline-block;
+  width: 95%;
+  height: 200px;
+  margin-left: 7px;
+}
+
+ul {
+  list-style-type: none;
+  text-align: left;
+  font-size: 35px;
+  padding: 3px;
+  margin: 0 0;
+  height: 205px;
+
+}
+
+ul>p {
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+#guesses>p {
+  margin: 1px 0;
+  padding: 2px;
+}
+
+ul>li {
+  width: 40%;
+  display: inline-block;
+  margin-left: 5px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  word-wrap: break-word;
+}
+
+.draw-buttons, #guesses {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.draw-buttons {
+  height: 100px;
+}
+
+#guesses {
+  font-style: italic;
+  font-size: 35px;
+  height: 28px;
+  color:red;
+  padding:10px;
+}
+
+button {
+  width: 10%;
+  height: 50px;
+  display: inline-block;
+  border-radius: 8px;
+}
+
+h1 {
+  background-color: rgb(65, 80, 151);
+  font-size: 30px;
+  margin:  0 0 1px 0;
+  text-align: center;
+  color:rgb(0, 0, 0);
+}
+
+#guess, .draw {
+  background-color: white;
+  border-radius: 5px;
+  display: block;
+  margin: auto;
+  width: 950px; 
+  height: 55px;
+
+}
+
+.draw {
+  padding-left: 10px 25px;
+}
+
+#guess {
+  padding: 10px;
+}
+
+#guess>.guess-input {
+  height: 30px;
+  width: 40%;
+  padding: 3px 5px;
+  font-size: 20px;
+}
+
+.draw>p {
+  margin: 15px;
+}
+
+span.word {
+font-weight: bolder;
+color: #228B22;
+}
+
+.hidden {
+  display: none;
+}
+
+#top-message {
+  height: 70px;
+  padding: 5px 0px;
+}
+
+canvas {
+  width: 500px;
+  height:450px;
+  background-color: white;
+  display: inline-block;
+  margin: 10px auto;
+  margin-left:5%;
+  cursor:crosshair;
+}
+
+.black {
+  background-color: #000000;
+}
+
+.blue {
+  background-color: #0000EE;
+}
+
+.green {
+  background-color: #66CD00;
+}
+
+.red {
+  background-color: #FF0000;
+}
+
+.yellow {
+  background-color: #FFFF00;
+}
+
+.clear, .white {
+  background-color: white;
+}
+.clear{
+  width:100px;
+}
 .grey-out {
   position: fixed;
   top: 0px;
@@ -14,7 +203,7 @@
 .user {
   position: relative;
   background-color: white;
-  max-height: 600px;
+  height: 400px;
   max-width: 600px;
   text-align: center;
   padding: 25px 5px;
@@ -36,39 +225,9 @@
   background-color: rgb(203, 214, 203);
 }
 
-.users {
-  display: inline-block;
-  background-color: white;
-  width: 25%;
-  margin: 10px 10px;
-  padding: 10px;
-  vertical-align: top;
-}
 
-#container { position: relative; }
-#canvas{ border: 1px solid #000;
 
-  display:block;
- }
-#resetCanvas,#logOut{
-  margin-left:35%;
-  margin-right:35%;
-  color:white;
-  background-color:rgb(0, 161, 214);
-}
 
-.drawClue{
-text-align:center;
-}
-
-#submitI{
-padding-top:20%;
-
-}
-#playerInput {
-
-  font-size:45px;
-}
 @font-face {
   font-family: 'catcafemedium';
   src: url('fonts/catcafe-webfont.woff') format('woff'),
@@ -16611,47 +16770,7 @@ body {
       padding: 30px 0px 0px 255px; }
 
 /* Typography */
-body {
-  font-size: 1rem;
-    font-weight: initial; }
 
-p {
-  font-size: 0.875rem; }
-
-
-.h2,
-h2 {
-  font-size: 1.88rem; }
-
-.h3,
-h3 {
-  font-size: 1.56rem; }
-
-.h4,
-h4 {
-  font-size: 1.13rem; }
-
-.h5,
-h5 {
-  font-size: 1rem; }
-
-.h6,
-h6 {
-  font-size: 0.9375rem; }
-
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 0; }
-
-p {
-  font-size: 0.88rem; }
-
-.blockquote {
-  padding: 1.25rem;
-  border: 1px solid #cccccc; }
 
 address p {
   margin-bottom: 0; }
@@ -16774,7 +16893,9 @@ address p {
   color: #fff !important; }
 
 .text-muted {
-  color: #494949 !important; }
+  color: #494949 !important; 
+font-size:20px;
+}
 
 .text-green {
   color: green !important; }

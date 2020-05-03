@@ -3,120 +3,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>KariKari</title>
 
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.js"></script>
+
   <link rel="stylesheet" href="css/style.css">
   <link rel="shortcut icon" href="images/favicon.png" />
-
-<body onload = "clearCanvas()">
-<!--login screen-->
+</head>
+<body>
+  <!--Login screen-->
   <div class="grey-out hidden">
-    <form class="user"><label for="username">Enter name </label><input id="username" type="text"
-        placeholder="player name" maxlength="14" autofocus>
+    <form class="user">
+      <img src="images/logo1.png" style="height:200px">
+      <br>
+      <label for="username">Enter name </label><input id="username" type="text" placeholder="player name" maxlength="14"
+        autofocus>
       <button type="submit" id="submitname">Submit</button>
     </form>
   </div>
-
-  <!--main screen-->
-  <div class="body-wrapper">
-    <header class="mdc-toolbar mdc-elevation--z4 mdc-toolbar--fixed">
-      <div class="mdc-toolbar__row">
-        <div class="mdc-menu-anchor">
+  <div>
+    <h1>KariKari</h1>
+    <container>
+      <div id="top-message">
+        <div class="draw hidden">
+          <p>Your word to draw is: <span class="word"></span></p>
         </div>
-        <div class="mdc-menu-anchor mr-1">
-          <div class="mdc-button__ripple"></div>
-          </button>
-        </div>
-        </section>
+        <form id="guess" class="hidden">
+          Enter your guess <input name="guess" class="guess-input" type="text">
+        </form>
       </div>
-      </row>
-    </header>
-    <!-- partial -->
-
-
-    <div class="page-wrapper mdc-toolbar-fixed-adjust">
-      <main class="content-wrapper">
-        <div class="mdc-layout-grid">
-          <h1>KariKari</h1>
-          <div class="mdc-layout-grid__inner">
-            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6">
-              <div class="mdc-card ">
-
-                <button class="mdc-button" id="resetCanvas">
-                  <div class="mdc-button__ripple"></div>
-                  <span class="mdc-button__label">CLEAR CANVAS</span>
-                </button>
-
-                <a href="#" id="downloader" onclick="download()" download="image.png">Download!</a>
-
-                <div id="container">
-                  <canvas id="canvas" width="400" height="300">
-                  </canvas>
-                </div>
-              </div>
-            </div>
- 
-
-            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6">
-              <div class="mdc-card card">
-                <!--Material textarea-->
-                <label for="form7">Current players:</label>
-                  <div class="users" input id="users"></div>
-
-                <div class="md-form">
-                  <textarea id="playerInput" class="md-textarea form-control" rows="3"></textarea>
-                </div>
-
-
-                <label id="submitI" class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label">
-                  <input class="mdc-text-field__input" id="myInput" placeholder="Enter Your Guess" type="text"
-                    aria-label="Label">
-                  <div class="mdc-notched-outline">
-                    <div class="mdc-notched-outline__leading"></div>
-                    <div class="mdc-notched-outline__trailing"></div>
-                  </div>
-                </label>
-                <button type="button" onclick="text();" id="sub" class="mdc-button">
-                  <div class="mdc-button__ripple"></div>
-                  <span class="mdc-button__label">Submit</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <button onclick="newWord();">next word</button>
-          <h2 >Word to be guessed is:<div id="myWord" style="color:rgb(238, 101, 101)">
-          </h2>
-
-
-
+    </container>
+    <div class="box">
+      <canvas id="canvas"></canvas>
+      <div class="users">
+        <ul>users</ul>
+        <div id="guesses"></div>
+        <br><br>
+        <div class="draw-buttons">
+          <button value="0" class="clear" type="button">CLEAR</button>
+          <br>
+          <button value="black" class="black" type="button"></button>
+          <button value="blue" class="blue" type="button"></button>
+          <button value="green" class="green" type="button"></button>
+          <button value="red" class="red" type="button"></button>
+          <button value="yellow" class="yellow" type="button"></button>
+          <button value="white" class="white" type="button"></button>
+          <br>
+          Pick a color!
+          <br>
         </div>
-      </main>
-      <!-- partial:partials/_footer.html -->
+
+
+      </div>
       <footer>
         <div class="mdc-layout-grid">
           <div class="mdc-layout-grid__inner">
-            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6">
-              <span class="text-muted">Copyright © 20202 <a class="text-green" href="javascript:void(0);"
-                  target="_blank">Game Name Here</a>. All rights reserved.</span>
+            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
+              <span class="text-muted">Copyright © 2020 <a href="javascript:void(0);" target="_blank">KariKari</a>. All
+                rights reserved.</span>
             </div>
           </div>
         </div>
-      </footer>
-      <!-- partial -->
-    </div>
-  </div>
+</body>
 
-  <!-- JQuery -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js">
-  </script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/js/mdb.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
-  <script src="script.js"></script>
+</footer>
+
+
+
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/js/mdb.min.js">
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+<script src="script.js"></script>
 </body>
 
 
