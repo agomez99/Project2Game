@@ -159,7 +159,7 @@ canvas {
   display: inline-block;
   margin: 10px auto;
   margin-left:5%;
-  cursor:crosshair;
+  cursor:url('../cursors/cursor.cur'),crosshair;
 }
 
 .black {
