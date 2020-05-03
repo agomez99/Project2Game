@@ -158,7 +158,7 @@ var drawerMouse = function() {
 
         if (obj.color === '0') {
             socket.emit('clear screen', user);
-            context.fillStyle = 'white';
+            context.fillStyle = 'black';
             return;
         };
     });
