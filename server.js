@@ -168,7 +168,7 @@ io.on('connection', function (socket)
 var connection = mysql.createConnection({
 	host     : 'localhost',
 	user     : 'root',
-	password : 'JadeG2009$',
+	password : '',
 	database : 'nodelogin'
 });
 
