@@ -5,6 +5,20 @@ var socket_io = require('socket.io');
 var app = express();
 app.use(express.static('public'));
 
+
+var mysql = require('mysql2');
+var session = require('express-session');
+var bodyParser = require('body-parser');
+var path = require('path');
+
+
+
+
+
+
+
+
+
 var server = http.Server(app);
 var io = socket_io(server);
 
@@ -147,6 +161,64 @@ io.on('connection', function (socket)
 	});
 
 })
+
+
+//--------------------------------------------------------------------------------------------------
+//mySql connection
+var connection = mysql.createConnection({
+	host     : 'localhost',
+	user     : 'root',
+	password : 'JadeG2009$',
+	database : 'nodelogin'
+});
+
+app.use(session({
+	secret: 'secret',
+	resave: true,
+	saveUninitialized: true
+}));
+app.use(bodyParser.urlencoded({extended : true}));
+app.use(bodyParser.json());
+
+app.get('/', function(request, response) {
+	response.sendFile(path.join(__dirname + '/login.html'));
+});
+
+
+app.post('/auth', function(request, response) {
+	var username = request.body.username;
+	var password = request.body.password;
+	if (username && password) {
+		connection.query('SELECT * FROM accounts WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
+			if (results.length > 0) {
+				request.session.loggedin = true;
+				request.session.username = username;
+				response.redirect('/home');
+			} else {
+				response.send('Incorrect Username and/or Password!');
+			}			
+			response.end();
+		});
+	} else {
+		response.send('Please enter Username and Password!');
+		response.end();
+	}
+});
+
+app.get('/home', function(request, response) {
+	if (request.session.loggedin) {
+		response.send('Welcome back, ' + request.session.username + '!');
+	} else {
+		response.send('Please login to view this page!');
+	}
+	response.end();
+});
+
+
+app.listen(9000);
+console.log('Server started at http://localhost:9000/login.html');
+
+
 
 server.listen(process.env.PORT || 8000, function() {
 	console.log('Server started at http://localhost:8000');

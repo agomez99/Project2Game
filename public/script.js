@@ -2,18 +2,6 @@ var socket = io();
 var user;
  
 
-
-//set minutes 
-var mins = .5;
-//calculate the seconds 
-var secs = mins * 60;
-//countdown function is evoked when page is loaded 
-function countdown() {
-    setTimeout('Decrement()', 60);
-}
-
-
-
 //intro login screen
 function usernameAsk() {
     $('.grey-out').fadeIn(500);
@@ -27,7 +15,7 @@ function usernameAsk() {
 
         var index = users.indexOf(user);
         if (index > -1) {
-            alert(user + ' already exists');
+            alert(user + ' that name already exists');
             return false
         };
         
@@ -66,7 +54,7 @@ var guesser = function() {
             return false
         };
 
-        console.log(user + "'s guess: " + guess);
+        console.log(user + "'s guess was : " + guess);
         socket.emit('guessword', {username: user, guessword: guess});
         $('.guess-input').val('');
     });
@@ -119,7 +107,10 @@ var reset = function(name) {
     clearScreen();
     $('#guesses').empty();
     console.log('New drawer: ' + name);
-    $('#guesses').html('<p>' + name + ' is the new drawer' + '</p>');
+    //correctAnswer();
+    $('#guesses').html('<p>' + name + ' is the new drawer' +'</p>');
+
+
 };
 var color;
 
@@ -128,7 +119,7 @@ var draw = function(obj) {
     context.fillStyle = obj.color;
     context.beginPath();
     context.arc(obj.position.x, obj.position.y,
-                    3, 0, 2 * Math.PI);
+                    5, 0, 2 * Math.PI);
 
     //context.moveTo(obj.positon.x - canvas.offsetLeft, obj.positon.y - canvas.offsetTop)
     context.stroke();
@@ -171,7 +162,14 @@ function cRedo() {
     }
 }
 
-
+function saveCanvas() {
+    var canvas = document.getElementById("canvas");
+    image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+    var link = document.createElement('a');
+    link.download = "my-image.png";
+    link.href = image;
+    link.click();
+}
 
 //function handling mouse operations
 var drawerMouse = function() {
@@ -228,6 +226,7 @@ var drawerMouse = function() {
     });
 
 };
+
 
 
 //loads all functions

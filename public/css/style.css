@@ -3,6 +3,12 @@
   box-sizing: border-box;
 }
 
+.saveBtn{
+margin-left:10%;
+width:100px;
+height:20px;
+}
+
 label.active{
 font-family:'catcafemedium';
 }
