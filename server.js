@@ -11,14 +11,6 @@ var session = require('express-session');
 var bodyParser = require('body-parser');
 var path = require('path');
 
-
-
-
-
-
-
-
-
 var server = http.Server(app);
 var io = socket_io(server);
 

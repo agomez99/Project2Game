@@ -65,6 +65,7 @@ var guesser = function() {
 
 //guess word
 var guessword = function(data){
+
     $('#guesses').text(data.username + "'s guess: " + data.guessword);
 
     if (click == true && data.guessword == $('span.word').text() ) {
