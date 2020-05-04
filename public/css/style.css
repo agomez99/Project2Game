@@ -132,9 +132,6 @@ h1 {
   padding-left: 10px 25px;
 }
 
-#guess {
-  padding: 10px;
-}
 
 #guess>.guess-input {
   height: 30px;
