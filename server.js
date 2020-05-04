@@ -90,6 +90,7 @@ io.on('connection', function (socket)
 		console.log('guessword event triggered on server from: ' + data.username + ' with word: ' + data.guessword);
 	});
 
+	//player disconnect
 	socket.on('disconnect', function() {
 		for (var i = 0; i < users.length; i++) {
 

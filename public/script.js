@@ -1,6 +1,9 @@
 var socket = io();
 var user;
- 
+
+// var enter = new Audio();
+// enter.src = "ding.mp3"
+// enter.play();
 
 //intro login screen
 function usernameAsk() {
@@ -85,16 +88,15 @@ var userlist = function(names) {
     users = names;
     var html = '<p>' + 'Players' + '</p>';
     for (var i = 0; i < names.length; i++) {
-        html += '<li>' + names[i] + '</li>';
+        html += '<li>'  + names[i] + '</li>';
     };
     $('ul').html(html);
 };
-
+ 
 //new drawer
 var newDrawer = function() {
-    var enter = newAudio();
-    enter.src = "sound1.wav"
-    enter.play();    clearScreen();
+  
+    clearScreen();
     $('#guesses').empty();
 };
 
@@ -106,6 +108,7 @@ var correctAnswer = function(data) {
 //rest for new game 
 var reset = function(name) {
     clearScreen();
+    console.log("clearscreen is called here")
     $('#guesses').empty();
     console.log('New drawer: ' + name);
     //correctAnswer();
@@ -121,9 +124,6 @@ var draw = function(obj) {
     context.beginPath();
     context.arc(obj.position.x, obj.position.y,
                     5, 0, 2 * Math.PI);
-
-    //context.moveTo(obj.positon.x - canvas.offsetLeft, obj.positon.y - canvas.offsetTop)
-    context.stroke();
     context.fill();
 };
 
@@ -194,6 +194,7 @@ var drawerMouse = function() {
 
         //clear screen update to black
         if (obj.color === '0') {
+ 
             socket.emit('clear screen', user);
             context.fillStyle = 'black';
             return;

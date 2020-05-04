@@ -3,10 +3,13 @@
   box-sizing: border-box;
 }
 
-.saveBtn, .redobtn, .undoBtn{
-margin-left:10%;
-width:100px;
-height:20px;
+.buttonSec{
+  margin-left:5%;
+}
+#submitname{
+  font-size: 20px;
+  word-wrap:normal;
+  width:175px;
 }
 
 label.active{
@@ -42,7 +45,7 @@ body {
   display: inline-block;
   background-color: white;
   width: 30%;
-  height:500px;
+  height:510px;
   margin: 10px 10px;
   padding: 10px;
 }
@@ -56,8 +59,8 @@ iframe {
 
 ul {
   list-style-type: none;
-  text-align: left;
-  font-size: 35px;
+  text-align: center;
+  font-size: 25px;
   padding: 3px;
   margin: 0 0;
   height: 205px;
@@ -193,6 +196,7 @@ canvas {
 }
 .clear{
   width:100px;
+  font-size:20px;
 }
 .grey-out {
   position: fixed;
@@ -209,7 +213,6 @@ canvas {
 .user {
   position: relative;
   background-color: white;
-  height: 400px;
   max-width: 600px;
   text-align: center;
   padding: 25px 5px;
@@ -223,12 +226,6 @@ canvas {
   font-size: 30px;
   padding: 5px;
   margin: 10px;
-}
-
-#submitname {
-  width: 70px;
-  height: 30px;
-  background-color: rgb(203, 214, 203);
 }
 
 
