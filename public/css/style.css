@@ -3,7 +3,7 @@
   box-sizing: border-box;
 }
 
-.saveBtn{
+.saveBtn, .redobtn, .undoBtn{
 margin-left:10%;
 width:100px;
 height:20px;

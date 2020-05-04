@@ -92,8 +92,9 @@ var userlist = function(names) {
 
 //new drawer
 var newDrawer = function() {
-    socket.emit('new drawer', user);
-    clearScreen();
+    var enter = newAudio();
+    enter.src = "sound1.wav"
+    enter.play();    clearScreen();
     $('#guesses').empty();
 };
 
@@ -162,6 +163,7 @@ function cRedo() {
     }
 }
 
+//save canvas button
 function saveCanvas() {
     var canvas = document.getElementById("canvas");
     image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
