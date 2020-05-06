@@ -16,7 +16,7 @@ label.active{
 font-family:'catcafemedium';
 }
 p{
-  font-size:20px;
+  font-size:25px;
 }
 body {
   color: rgb(0, 5, 5);
@@ -120,6 +120,7 @@ h1 {
 
 #guess, .draw {
   background-color: white;
+  font-family:'catcafemedium';
   border-radius: 5px;
   display: block;
   margin: auto;
@@ -165,7 +166,7 @@ canvas {
   display: inline-block;
   margin: 10px auto;
   margin-left:5%;
-  cursor:url('../cursors/cursor.cur'),crosshair;
+  cursor:url('../cursors/cursor2.cur'),crosshair;
 }
 
 .black {

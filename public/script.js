@@ -130,7 +130,7 @@ var draw = function(obj) {
 
 
 //display backgorund image
-document.getElementById("canvas").style.background = "url('images/canvas.jpg')";
+document.getElementById("canvas").style.background = "url('images/canvas2.jpg')";
 
 
 //curten mouse positon fo undo and redo

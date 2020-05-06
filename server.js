@@ -5,21 +5,17 @@ var socket_io = require('socket.io');
 var app = express();
 app.use(express.static('public'));
 
-
-var mysql = require('mysql2');
-var session = require('express-session');
-var bodyParser = require('body-parser');
-var path = require('path');
-
 var server = http.Server(app);
 var io = socket_io(server);
 
 var users = [];
 
 var words = [
-	"school", "plant", "sun", "state", "eye", "city", "tree","farm","sea", 
-	"night","life","rock","fire", "problem", "airplane", "top", "king",
-    "space", "whale", "unicorn", "narwhal", "furniture","pigeon"
+	"school", "plant", "sun", "state", "eye", "pizza", "tree","farm","flower", 
+	"star","life","rock","fire", "camera", "airplane", "top", "king",
+    "starfish", "whale", "unicorn", "narwhal", "furniture","pigeon","igloo","cat","computer","dragon","light","socks","heart",
+    "skateboard", "kite", "snake","nose","cookie", "shirt","shoe","lollipop", "football","chair","robot"
+    
 ];
 //random word from array.
 function newWord() {
