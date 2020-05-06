@@ -11,10 +11,10 @@ var io = socket_io(server);
 var users = [];
 
 var words = [
-	"school", "plant", "sun", "state", "eye", "pizza", "tree","farm","flower", 
-	"star","life","rock","fire", "camera", "airplane", "top", "king",
-    "starfish", "whale", "unicorn", "narwhal", "furniture","pigeon","igloo","cat","computer","dragon","light","socks","heart",
-    "skateboard", "kite", "snake","nose","cookie", "shirt","shoe","lollipop", "football","chair","robot"
+	"plant", "sun","eye", "pizza", "tree","farm","flower", 
+	"star","life","rock","fire","airplane","king",
+    "starfish","unicorn","igloo","cat","computer","dragon","light","socks","heart",
+    "skateboard", "kite", "snake","nose","cookie", "shirt","shoe","lollipop", "football","chair"
     
 ];
 //random word from array.
