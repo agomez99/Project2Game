@@ -18,14 +18,17 @@
   <!--Login screen-->
   <div class="grey-out hidden">
     <form class="user">
-      <img src="images/logo1.png" style="height:200px">
+      <img src="images/logo2.png" style="height:200px">
       <br>
-      <label for="username">Enter name </label><input id="username" type="text" placeholder="player name" maxlength="14"
-        autofocus>
-      <button class="btn btn-success" type="submit" id="submitname">submit</button>
-    </form>
+      <div class="mdc-text-field">
+        <input id="username" input class="mdc-text-field__input" type="text" placeholder="Enter a username ">
+          <div class="mdc-line-ripple"></div>
+        <label for="username" class="mdc-floating-label">
+          <button class="mdc-button" type="submit" id="submitname">submit</button>
+        </label>
+      </div>
+    </form>  
   </div>
-  <div>
     <h1>KariKari</h1>
     <container>
       <div id="top-message">
@@ -39,9 +42,8 @@
     </container>
     <div class="box">
       <div class="buttonSec">
-        <button onclick="saveCanvas()" class="btn btn-elegant">Download</button>
+        <button onclick="saveCanvas()" class="btn btn-light-green" id="saveBtn">Download</button>
       </div>
-
       <canvas id="canvas"></canvas>
       <div class="users">
         <ul>users</ul>
@@ -60,10 +62,9 @@
         </div>
       </div>
 
-
     </div>
     <footer>
-      <div class="mdc-layout-grid">
+      <div class="mdc-layout-grid" >
         <div class="mdc-layout-grid__inner">
           <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
             <span class="text-muted">Copyright © 2020 <a href="javascript:void(0);" target="_blank">KariKari</a>. All
@@ -86,6 +87,7 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/js/mdb.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
 <script src="script.js"></script>
+
 </body>
 
 

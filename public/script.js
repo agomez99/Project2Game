@@ -1,10 +1,6 @@
 var socket = io();
 var user;
 
-// var enter = new Audio();
-// enter.src = "ding.mp3"
-// enter.play();
-
 //intro login screen
 function usernameAsk() {
     $('.grey-out').fadeIn(500);
@@ -65,9 +61,7 @@ var guesser = function() {
 
 //guess word
 var guessword = function(data){
-
     $('#guesses').text(data.username + "'s guess: " + data.guessword);
-
     if (click == true && data.guessword == $('span.word').text() ) {
         console.log('guesser: ' + data.username + ' draw-word: ' + $('span.word').text());
         socket.emit('correct answer', {username: data.username, guessword: data.guessword});
@@ -96,7 +90,6 @@ var userlist = function(names) {
  
 //new drawer
 var newDrawer = function() {
-  
     clearScreen();
     $('#guesses').empty();
 };
@@ -133,36 +126,6 @@ var draw = function(obj) {
 document.getElementById("canvas").style.background = "url('images/canvas2.jpg')";
 
 
-//curten mouse positon fo undo and redo
-var cPushArray = new Array();
-var cStep = -1;
-var ctx;
-// ctx = document.getElementById('canvas').getContext("2d");
-	
-function cPush() {
-    cStep++;
-    if (cStep < cPushArray.length) { cPushArray.length = cStep; }
-    cPushArray.push(document.getElementById('canvas').toDataURL());
-}
-//undo function
-function cUndo() {
-    if (cStep > 0) {
-        cStep--;
-        var canvasPic = new Image();
-        canvasPic.src = cPushArray[cStep];
-        canvasPic.onload = function () { ctx.drawImage(canvasPic, 0, 0); }
-    }
-}
-
-//redo function
-function cRedo() {
-    if (cStep < cPushArray.length-1) {
-        cStep++;
-        var canvasPic = new Image();
-        canvasPic.src = cPushArray[cStep];
-        canvasPic.onload = function () { ctx.drawImage(canvasPic, 0, 0); }
-    }
-}
 
 //save canvas button
 function saveCanvas() {

@@ -5,7 +5,14 @@
 
 .buttonSec{
   margin-left:5%;
+
 }
+ 
+#saveBtn{
+margin-bottom:-1%;
+margin-left:20%;
+}
+
 #submitname{
   font-size: 20px;
   word-wrap:normal;
@@ -20,7 +27,8 @@ p{
 }
 body {
   color: rgb(0, 5, 5);
-  background-color: rgb(179, 199, 255);
+  background-image: url("/images/bgIMG.jpg");
+  background-size: cover;
   margin: 0px;
   min-width: 1000px;
   font-size:35px;
@@ -111,7 +119,6 @@ button {
 }
 
 h1 {
-  background-color: rgb(65, 80, 151);
   font-size: 30px;
   margin:  0 0 1px 0;
   text-align: center;
@@ -119,13 +126,13 @@ h1 {
 }
 
 #guess, .draw {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   font-family:'catcafemedium';
   border-radius: 5px;
   display: block;
   margin: auto;
-  width: 950px; 
-  height: 55px;
+  width: 900px; 
+  height: 60px;
 
 }
 
@@ -165,7 +172,7 @@ canvas {
   background-color: white;
   display: inline-block;
   margin: 10px auto;
-  margin-left:5%;
+  margin-left:19%;
   cursor:url('../cursors/cursor2.cur'),crosshair;
 }
 
@@ -210,7 +217,7 @@ canvas {
 
 .user {
   position: relative;
-  background-color: white;
+  background-color: #F5F5DC;
   max-width: 600px;
   text-align: center;
   padding: 25px 5px;
@@ -242,8 +249,9 @@ canvas {
     font-family: 'catcafemedium';
     padding:0;
     margin:0;
+    font-weight:bold;
 
-    font-size:12vh;
+    font-size:14vh;
   }
   h2{
     text-align: center;
