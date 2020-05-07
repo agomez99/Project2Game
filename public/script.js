@@ -1,8 +1,30 @@
 var socket = io();
 var user;
 
+
+
+
+
+
+//display backgorund image
+document.getElementById("canvas").style.background = "url('images/canvas2.jpg')";
+
+//save canvas button
+function saveCanvas() {
+    var canvas = document.getElementById("canvas");
+    image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+    var link = document.createElement('a');
+    link.download = "my-image.png";
+    link.href = image;
+    link.click();
+}
+
+
+
+
+
 //intro login screen
-function usernameAsk() {
+function introScreen() {
     $('.grey-out').fadeIn(500);
     $('.user').fadeIn(500);
     $('.user').submit(function(){
@@ -14,7 +36,7 @@ function usernameAsk() {
 
         var index = users.indexOf(user);
         if (index > -1) {
-            alert(user + ' that name already exists');
+            alert(user + ' name already exists');
             return false
         };
         
@@ -122,21 +144,6 @@ var draw = function(obj) {
 };
 
 
-//display backgorund image
-document.getElementById("canvas").style.background = "url('images/canvas2.jpg')";
-
-
-
-//save canvas button
-function saveCanvas() {
-    var canvas = document.getElementById("canvas");
-    image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-    var link = document.createElement('a');
-    link.download = "my-image.png";
-    link.href = image;
-    link.click();
-}
-
 //function handling mouse operations
 var drawerMouse = function() {
     clearScreen();
@@ -202,7 +209,7 @@ $(document).ready(function() {
     context = canvas[0].getContext('2d');
     canvas[0].width = canvas[0].offsetWidth;
     canvas[0].height = canvas[0].offsetHeight;
-    usernameAsk();
+    introScreen();
     socket.on('userlist', userlist);
     socket.on('guesser', guesser);
     socket.on('guessword', guessword);

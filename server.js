@@ -48,7 +48,7 @@ io.on('connection', function (socket)
 			io.in(socket.username).emit('drawer', socket.username);
 			console.log(socket.username + ' is a drawer');
 
-			// gets random word
+			// gets random word from array
 			io.in(socket.username).emit('draw word', newWord());
 				//console.log(socket.username + "'s + newWord());
 		} 
@@ -72,7 +72,7 @@ io.on('connection', function (socket)
 		socket.broadcast.emit('draw', obj);
 	});
 
-	// submit each client's guesses to all clients
+	// client players guess to other players
 	socket.on('guessword', function(data) {
 		io.emit('guessword', { username: data.username, guessword: data.guessword})
 		console.log('guessword event triggered on server from: ' + data.username + ' with word: ' + data.guessword);
@@ -150,8 +150,6 @@ io.on('connection', function (socket)
 	});
 
 })
-
-
 
 server.listen(process.env.PORT || 8000, function() {
 	console.log('Server started at http://localhost:8000');
