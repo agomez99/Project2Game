@@ -9,3 +9,4 @@ technologies used:
 *Socket.IO
 *Express
 *MDBootstrap
+*JQuery
