@@ -3,7 +3,7 @@
 Online Pictionary game
 technologies used:
 
-Javascript
+..*Javascript
 HTML
 Node.JS
 Socket.IO
