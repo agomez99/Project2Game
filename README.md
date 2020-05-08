@@ -1,9 +1,13 @@
-# KariKari
+#KariKari
 
-Online Pictionary game
-technologies used:
+##Online Pictionary game
 
-*Javascript
+
+
+
+Technologies used:
+
+.*Javascript
 *HTML
 *Node.JS
 *Socket.IO
