@@ -4,7 +4,7 @@
 
 
 
-[Heroku](https://karikari.herokuapp.com/)
+[Heroku Link:https://karikari.herokuapp.com/](https://karikari.herokuapp.com/)
 Technologies used:
 
 * Javascript
