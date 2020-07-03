@@ -10,7 +10,6 @@ Team Members
 * Sierra Albright
 
 
-[Heroku Link: https://karikari.herokuapp.com/](https://karikari.herokuapp.com/)
 
 Technologies used:
 
